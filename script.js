@@ -1,6 +1,5 @@
 /* DOMs */
 
-
 var footer = document.getElementsByTagName("footer")[0];
 var hamburger = document.getElementsByClassName("navbar-toggler")[0];
 var cards = document.getElementsByClassName("card");
@@ -39,7 +38,6 @@ var onEditCardTwo = function () {
 
 var doubleClickOnNavbar = function() {
   let link = document.querySelector("link")
-  console.log(link.href)
   if (link.href == "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css") {
     link.href = "";
   } else {
@@ -82,11 +80,17 @@ var resetBody = function(){
 }
 
 /* EVENEMENTS LIES AU DOM */
+// function 1
 footer.addEventListener('click', onFooterClick);
+// function 2
 hamburger.addEventListener("click", onHamburgerClick);
+// function 3
 editCardOne.addEventListener("click", onEditCardOne);
+// function 4
 editCardTwo.addEventListener("click", onEditCardTwo);
+// function 5
 navBar.addEventListener("dblclick", doubleClickOnNavbar);
+// function 6
 for (let index = 0; index < cards.length; index++) {
   cards[index].getElementsByClassName("btn-success")[0].addEventListener("mouseover", function (){
     overCards(index);
@@ -95,11 +99,14 @@ for (let index = 0; index < cards.length; index++) {
     outCards(index);
   });
 }
+// function 7
 leftJumbotron.addEventListener("click", nextCard);
+// function 8
 rightJumbotron.addEventListener("click", function(event) {
   event.preventDefault();
 });
 rightJumbotron.addEventListener("click", previousCard );
+// function 9
 logo.addEventListener("keydown", function(event) {
   if (event.keyCode === 65) {
     onLeft();
